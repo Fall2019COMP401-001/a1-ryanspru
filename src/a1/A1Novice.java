@@ -10,23 +10,16 @@ public class A1Novice {
 		
 		int tolCus = scan.nextInt();
 		
-		String[] firstName = new String[tolCus];
-		String[] lastName = new String[tolCus];
-		
-		for (int i = 0; i < firstName.length; i++) {
-			firstName[i] = scan.next();
-			lastName[i] = scan.next();
+		for (int i = 0; i < tolCus; i++) {
+			String firstName = scan.next();
+			String lastName = scan.next();
 			
 			int tolItems = scan.nextInt();
 			
-			int[] quantity = new int[tolItems];
-			String[] itemName = new String[tolItems];
-			double[] price = new double[tolItems];
-			
-			for (int j = 0; i < quantity.length; j++) {
-				quantity[i] = scan.nextInt();
-				itemName[i] = scan.next();
-				price[i] = scan.nextDouble();
+			for (int j = 0; j < tolItems; j++) {
+				int quantity = scan.nextInt();
+				String itemName = scan.next();
+				double price = scan.nextDouble();
 			}
 			
 			double total = calculateTotal(quantity, price, 0);
