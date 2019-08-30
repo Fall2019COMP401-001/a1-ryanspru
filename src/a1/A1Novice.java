@@ -22,18 +22,25 @@ public class A1Novice {
 			lastName = scan.next();
 			
 			tolItems = scan.nextInt();
+			double[] totals = new double[tolItems];
 			
 			for (int j = 0; j < tolItems; j++) {
 				quantity = scan.nextInt();
 				itemName = scan.next();
 				price = scan.nextDouble();
-				double total = quantity * price;
-				System.out.println(firstName.charAt(0) + ". " + lastName + ": " + total);
+				totals[j] = quantity * price;
 			}
+			
+			System.out.println(firstName.charAt(0) + ". " + lastName + ": " + calculateTotal(totals));
 			
 		}
 	}
-}
-
-		// Your code follows here.
 	
+	static double calculateTotal(double [] totals) {
+		double total = 0;
+		for (int i = 0; i < totals.length; i++) {
+			total+= totals[i];
+		}
+		return total;
+	}
+}
