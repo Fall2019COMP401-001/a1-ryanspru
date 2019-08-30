@@ -32,9 +32,8 @@ public class A1Novice {
 			}
 			
 		}
-		
-		double total = calculateTotal(quantity, price, 0);
+	}
+}
 
 		// Your code follows here.
 	
-	}
