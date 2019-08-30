@@ -31,7 +31,9 @@ public class A1Novice {
 				totals[j] = quantity * price;
 			}
 			
-			System.out.println(firstName.charAt(0) + ". " + lastName + ": " + calculateTotal(totals));
+			double f = calculateTotal(totals);
+			
+			System.out.println(firstName.charAt(0) + ". " + lastName + ": " + String.format("%.2f", f));
 			
 		}
 	}
