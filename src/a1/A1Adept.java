@@ -22,6 +22,14 @@ public class A1Adept {
 		
 		String[] firstName = new String[cusCount];
 		String[] lastName = new String[cusCount];
+		double[] cusTotal = new double[cusCount];
+		
+		double biggest = 0;
+		double smallest = 99999999;
+		String biggestFirstName = "";
+		String biggestLastName = "";
+		String smallestFirstName = "";
+		String smallestLastName = "";
 		
 		for (int j = 0; j < cusCount; j++) {
 			firstName[j] = scan.next();
@@ -29,13 +37,13 @@ public class A1Adept {
 			
 			int itemCount = scan.nextInt();
 			
-			int[] quantity = new int[itemCount];
+			int quantity = 0;
 			String itemName = "";
 			
 			double[] total = new double[count];
 			
 			for (int e = 0; e < itemCount; e++) {
-				quantity[e] = scan.nextInt();
+				quantity = scan.nextInt();
 				itemName = scan.next();
 				
 				for (int z = 0; z < count; z++) {
@@ -45,11 +53,25 @@ public class A1Adept {
 				}
 			}
 			cusTotal[j] = calculateTotal(total);
-			double biggest = calculateBiggest(cusTotal);
-			double smallest = calculateSmallest(cusTotal);
+			
+			for (int q = 0; q < cusTotal.length; q++) {
+				if (cusTotal[q] > biggest) {
+					biggest = cusTotal[q];
+					biggestFirstName = firstName[q];
+					biggestLastName = lastName[q];
+				}
+			}
+			
+			for (int w = 0; w < cusTotal.length; w++) {
+				if (cusTotal[w] < smallest) {
+					smallest = cusTotal[w];
+					smallestFirstName = firstName[w];
+					smallestLastName = lastName[w];
+				}
+			}
 		}
-		System.out.println("Biggest: " + firstName + " " + lastName + " (" + biggest + ")");
-		System.out.println("Smallest: " + firstName + " " + lastName + " (" + smallest + ")");
+		System.out.println("Biggest: " + biggestFirstName + " " + biggestLastName + " (" + biggest + ")");
+		System.out.println("Smallest: " + smallestFirstName + " " + smallestLastName + " (" + smallest + ")");
 		// Your code follows here.
 	}
 	static double calculateTotal(double[] total) {
@@ -58,25 +80,5 @@ public class A1Adept {
 			totals+= total[i];
 		}
 		return totals;
-	}
-	
-	static double calculateBiggest(double[] totals) {
-		double biggest = 0;
-		for (int j = 0; j < totals.length; j++) {
-			if (totals[j] > biggest) {
-				biggest = totals[j];
-			}
-		}
-		return biggest;
-	}
-	
-	static double calculateSmallest(double[] totals) {
-		double smallest = 0;
-		for (int f = 0; f < totals.length; f++) {
-			if (totals[f] < smallest) {
-				smallest = totals[f];
-			}
-		}
-		return smallest;
 	}
 }
