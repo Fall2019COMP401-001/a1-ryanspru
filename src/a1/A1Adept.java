@@ -70,8 +70,13 @@ public class A1Adept {
 				}
 			}
 		}
-		System.out.println("Biggest: " + biggestFirstName + " " + biggestLastName + " (" + biggest + ")");
-		System.out.println("Smallest: " + smallestFirstName + " " + smallestLastName + " (" + smallest + ")");
+		double average = 0;
+		double n = 0;
+		n = calculateTotal(cusTotal);
+		average = n / cusCount;
+		System.out.println("Biggest: " + biggestFirstName + " " + biggestLastName + " (" + String.format("%.2f", biggest) + ")");
+		System.out.println("Smallest: " + smallestFirstName + " " + smallestLastName + " (" + String.format("%.2f", smallest) + ")");
+		System.out.println("Average: " + String.format("%.2f", average));
 		// Your code follows here.
 	}
 	static double calculateTotal(double[] total) {
