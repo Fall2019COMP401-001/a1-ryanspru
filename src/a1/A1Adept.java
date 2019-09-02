@@ -53,15 +53,15 @@ public class A1Adept {
 				}
 			}
 			cusTotal[j] = calculateTotal(total);
-			
-			for (int q = 0; q < cusTotal.length; q++) {
-				if (cusTotal[q] > biggest) {
-					biggest = cusTotal[q];
-					biggestFirstName = firstName[q];
-					biggestLastName = lastName[q];
-				}
+		}
+		for (int q = 0; q < cusTotal.length; q++) {
+			if (cusTotal[q] > biggest) {
+				biggest = cusTotal[q];
+				biggestFirstName = firstName[q];
+				biggestLastName = lastName[q];
 			}
 		}
+		
 		for (int w = 0; w < cusTotal.length; w++) {
 			if (cusTotal[w] < smallest) {
 				smallest = cusTotal[w];
