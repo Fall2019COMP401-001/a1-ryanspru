@@ -44,6 +44,7 @@ public class A1Jedi {
 						if (name[z].equals(itemName[m])) {
 							total[z]+= quantity[m];
 							numOfCus[z]+= 1;
+							break;
 						}
 					}
 					
