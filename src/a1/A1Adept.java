@@ -61,13 +61,12 @@ public class A1Adept {
 					biggestLastName = lastName[q];
 				}
 			}
-			
-			for (int w = 0; w < cusTotal.length; w++) {
-				if (cusTotal[w] < smallest) {
-					smallest = cusTotal[w];
-					smallestFirstName = firstName[w];
-					smallestLastName = lastName[w];
-				}
+		}
+		for (int w = 0; w < cusTotal.length; w++) {
+			if (cusTotal[w] < smallest) {
+				smallest = cusTotal[w];
+				smallestFirstName = firstName[w];
+				smallestLastName = lastName[w];
 			}
 		}
 		double average = 0;
@@ -77,7 +76,6 @@ public class A1Adept {
 		System.out.println("Biggest: " + biggestFirstName + " " + biggestLastName + " (" + String.format("%.2f", biggest) + ")");
 		System.out.println("Smallest: " + smallestFirstName + " " + smallestLastName + " (" + String.format("%.2f", smallest) + ")");
 		System.out.println("Average: " + String.format("%.2f", average));
-		// Your code follows here.
 	}
 	static double calculateTotal(double[] total) {
 		double totals = 0;
